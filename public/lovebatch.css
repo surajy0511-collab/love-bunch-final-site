@@ -4159,3 +4159,26 @@ button:focus-visible, a:focus-visible {
     height: 36px !important;
   }
 }
+
+
+/* Rolling announcement banner on mobile and tablet only */
+@media (max-width: 1024px) {
+  .announcement {
+    width: max-content !important;
+    min-width: 100%;
+    justify-content: flex-start !important;
+    gap: 36px !important;
+    white-space: nowrap !important;
+    animation: lovebatch-banner-scroll 18s linear infinite;
+    will-change: transform;
+  }
+
+  @keyframes lovebatch-banner-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
