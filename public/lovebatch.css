@@ -3022,7 +3022,7 @@ em {
   color: var(--cream);
 }
 .bulk-list li::before {
-  content: "—";
+  content: "â€”";
   color: #eab98f;
 }
 .bulk-visual {
@@ -3963,7 +3963,7 @@ button:focus-visible, a:focus-visible {
 }
 
 
-/* Lovebatch cart interactions — additive styles using the existing brand tokens. */
+/* Lovebatch cart interactions â€” additive styles using the existing brand tokens. */
 .lovebatch-cart-backdrop {
   position: fixed;
   inset: 0;
@@ -4081,142 +4081,69 @@ button:focus-visible, a:focus-visible {
   opacity: 0.55;
   cursor: not-allowed;
 }
-/* Replace existing header text logo with new image */
+
+/* Lovebatch header logo - works on localhost and GitHub Pages */
 .site-header .logo {
   display: block !important;
-  width: 160px !important;
-  height: 45px !important;
-  font-size: 0 !important;
-  line-height: 0 !important;
-  background-image: url('/lovebatch-website/images/lovebatch-logo-burgundy.png');
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: contain;
-}
-
-.site-header .logo > * {
-  display: none !important;
-}
-/* GitHub Pages - force Lovebatch header logo */
-.site-header .logo {
-  background-image: url('/lovebatch-website/images/lovebatch-logo-burgundy.png') !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: contain !important;
-  width: 160px !important;
-  height: 45px !important;
-  display: block !important;
-  font-size: 0 !important;
-  color: transparent !important;
-}
-
-.site-header .logo > * {
-  display: none !important;
-}
-
-/* Add Lovebatch logo as an overlay in the header */
-.site-header {
-  position: relative !important;
-}
-
-.site-header::before {
-  content: "";
-  position: absolute;
-  left: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 160px;
-  height: 50px;
-  background-image: url('./images/lovebatch-logo-burgundy.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  z-index: 999;
-  pointer-events: none;
-}
-/* Force the logo to appear in the header */
-.site-header {
-  position: relative !important;
-}
-
-/* Lovebatch header logo - single image */
-.site-header .logo {
-  display: block !important;
+  flex: 0 0 auto !important;
   width: 160px !important;
   height: 50px !important;
   font-size: 0 !important;
   line-height: 0 !important;
-  background-image: url('/images/lovebatch-logo-burgundy.png') !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: contain !important;
-}
-
-.site-header .logo > * {
-  display: none !important;
-}
-
-@media (max-width: 900px) {
-  .site-header .logo {
-    width: 140px !important;
-    height: 42px !important;
-  }
-}
-
-@media (max-width: 600px) {
-  .site-header .logo {
-    width: 120px !important;
-    height: 36px !important;
-  }
-}
-
-/* FINAL FIX - remove all overlapping header logo layers */
-.site-header .logo {
-  background-image: url('/images/lovebatch-logo-burgundy.png') !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: contain !important;
   color: transparent !important;
   -webkit-text-fill-color: transparent !important;
   text-shadow: none !important;
+  background-image: url('./images/lovebatch-logo-burgundy.png') !important;
+  background-repeat: no-repeat !important;
+  background-position: left center !important;
+  background-size: contain !important;
 }
 
-.site-header .logo *,
 .site-header .logo span,
 .site-header .logo strong,
 .site-header .logo sup {
   display: none !important;
   visibility: hidden !important;
-  opacity: 0 !important;
 }
 
+/* Remove any extra logo overlay layers that caused duplicate logos */
+.site-header::before,
+.site-header::after,
 .site-header .logo::before,
 .site-header .logo::after {
   content: none !important;
   display: none !important;
   background: none !important;
 }
-/* Definitive header logo cleanup */
-.site-header::before,
-.site-header::after {
-  content: none !important;
-  display: none !important;
-  background: none !important;
-}
 
-.site-header .logo {
-  display: block !important;
-  width: 160px !important;
-  height: 50px !important;
+/* Replace mobile green emoji-style stars with the site's gold star symbol */
+.announcement i,
+.marquee i {
+  display: inline-block !important;
+  position: relative;
+  overflow: hidden;
+  width: 1.2em;
+  height: 1.2em;
   font-size: 0 !important;
-  background: url('/images/lovebatch-logo-burgundy.png') center / contain no-repeat !important;
-  color: transparent !important;
+  line-height: 1.2em;
+  font-style: normal !important;
+  text-align: center;
+  vertical-align: middle;
 }
 
-.site-header .logo span,
-.site-header .logo strong,
-.site-header .logo sup {
-  display: none !important;
+.announcement i::before,
+.marquee i::before {
+  content: "âœ³";
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.2em;
+  color: #e7aa70 !important;
+}
+
+.marquee i::before {
+  font-size: 17px;
+  color: #e7aa70 !important;
 }
 
 @media (max-width: 900px) {
