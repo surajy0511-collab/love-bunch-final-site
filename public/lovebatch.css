@@ -4097,3 +4097,19 @@ button:focus-visible, a:focus-visible {
 .site-header .logo > * {
   display: none !important;
 }
+/* GitHub Pages - force Lovebatch header logo */
+.site-header .logo {
+  background-image: url('/lovebatch-website/images/lovebatch-logo-burgundy.png') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+  width: 160px !important;
+  height: 45px !important;
+  display: block !important;
+  font-size: 0 !important;
+  color: transparent !important;
+}
+
+.site-header .logo > * {
+  display: none !important;
+}
