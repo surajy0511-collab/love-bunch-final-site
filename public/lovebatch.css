@@ -4134,3 +4134,63 @@ button:focus-visible, a:focus-visible {
   z-index: 999;
   pointer-events: none;
 }
+/* Force the logo to appear in the header */
+.site-header {
+  position: relative !important;
+}
+
+.site-header::before {
+  content: "";
+  display: block !important;
+  position: absolute !important;
+  left: 5% !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 160px !important;
+  height: 50px !important;
+  background: url('/images/lovebatch-logo-burgundy.png') center / contain no-repeat !important;
+  z-index: 9999 !important;
+  pointer-events: none;
+}
+/* FINAL RESPONSIVE HEADER LOGO FIX */
+
+/* Remove the temporary header overlay */
+.site-header::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Use only the burgundy logo image */
+.site-header .logo {
+  display: block !important;
+  flex-shrink: 0 !important;
+  width: 160px !important;
+  height: 48px !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  background-image: url('/images/lovebatch-logo-burgundy.png') !important;
+  background-repeat: no-repeat !important;
+  background-position: left center !important;
+  background-size: contain !important;
+}
+
+/* Hide the original text logo */
+.site-header .logo > * {
+  display: none !important;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .site-header .logo {
+    width: 140px !important;
+    height: 42px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .site-header .logo {
+    width: 120px !important;
+    height: 36px !important;
+  }
+}
