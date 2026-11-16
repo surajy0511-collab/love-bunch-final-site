@@ -3022,7 +3022,7 @@ em {
   color: var(--cream);
 }
 .bulk-list li::before {
-  content: "â€”";
+  content: "\2022";
   color: #eab98f;
 }
 .bulk-visual {
