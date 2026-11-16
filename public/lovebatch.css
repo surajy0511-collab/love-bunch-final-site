@@ -3963,7 +3963,7 @@ button:focus-visible, a:focus-visible {
 }
 
 
-/* Lovebatch cart interactions â€” additive styles using the existing brand tokens. */
+/* Lovebatch cart interactions Ã¢â‚¬â€ additive styles using the existing brand tokens. */
 .lovebatch-cart-backdrop {
   position: fixed;
   inset: 0;
@@ -4133,7 +4133,7 @@ button:focus-visible, a:focus-visible {
 
 .announcement i::before,
 .marquee i::before {
-  content: "âœ³";
+  content: "Ã¢Å“Â³";
   display: block;
   font-family: Arial, sans-serif;
   font-size: 14px;
@@ -4193,4 +4193,84 @@ button:focus-visible, a:focus-visible {
 /* Correctly remove hidden product wrappers from the grid */
 .product-grid > div:has(> article.product-card[style*="display: none"]) {
   display: none !important;
+}
+
+
+/* Lovebatch mobile product-grid alignment fix */
+@media (max-width: 800px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: 100%;
+  }
+
+  .product-grid > div {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .product-grid .product-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .product-grid .card-topline {
+    min-width: 0;
+    gap: 6px;
+    overflow-wrap: anywhere;
+  }
+
+  .product-grid .product-image,
+  .product-grid .christmas-coming-soon-image {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .product-grid .product-info,
+  .product-grid .product-info > div {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px;
+  }
+
+  .product-grid .product-card {
+    padding: 9px;
+  }
+
+  .product-grid .christmas-coming-soon-image {
+    min-height: 0 !important;
+    aspect-ratio: 1.15;
+  }
+
+  .product-grid .christmas-coming-soon-image > div:last-child {
+    max-width: calc(100% - 24px);
+    padding: 12px 10px !important;
+    font-size: 11px !important;
+  }
+}
+
+/* Fix mobile product grid column overflow */
+@media (max-width: 800px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .product-grid > div {
+    min-width: 0 !important;
+    width: 100%;
+  }
+
+  .product-grid .product-card {
+    min-width: 0 !important;
+    width: 100%;
+    max-width: 100%;
+  }
 }
