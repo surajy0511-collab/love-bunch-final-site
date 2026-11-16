@@ -4182,3 +4182,9 @@ button:focus-visible, a:focus-visible {
     }
   }
 }
+
+
+/* Fix empty spaces when filtering product categories */
+.product-grid > div:has(> .product-card[style*="display: none"]) {
+  display: none !important;
+}
