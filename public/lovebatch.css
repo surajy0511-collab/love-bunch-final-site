@@ -4188,3 +4188,9 @@ button:focus-visible, a:focus-visible {
 .product-grid > div:has(> .product-card[style*="display: none"]) {
   display: none !important;
 }
+
+
+/* Correctly remove hidden product wrappers from the grid */
+.product-grid > div:has(> article.product-card[style*="display: none"]) {
+  display: none !important;
+}
