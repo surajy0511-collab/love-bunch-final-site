@@ -2304,7 +2304,7 @@ nav button:hover,.footer-bottom button:hover {
   content: "";
   position: absolute;
   inset: 18px;
-  border: 1px dashed rgba(104,6,0,.35);
+  border: none !important;
 }
 .scribble {
   position: absolute;
@@ -3022,7 +3022,7 @@ em {
   color: var(--cream);
 }
 .bulk-list li::before {
-  content: "â€”";
+  content: "Ã¢â‚¬â€";
   color: #eab98f;
 }
 .bulk-visual {
@@ -3963,7 +3963,7 @@ button:focus-visible, a:focus-visible {
 }
 
 
-/* Lovebatch cart interactions â€” additive styles using the existing brand tokens. */
+/* Lovebatch cart interactions Ã¢â‚¬â€ additive styles using the existing brand tokens. */
 .lovebatch-cart-backdrop {
   position: fixed;
   inset: 0;
@@ -4133,7 +4133,7 @@ button:focus-visible, a:focus-visible {
 
 .announcement i::before,
 .marquee i::before {
-  content: "âœ³";
+  content: "Ã¢Å“Â³";
   display: block;
   font-family: Arial, sans-serif;
   font-size: 14px;
