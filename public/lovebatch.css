@@ -3022,7 +3022,7 @@ em {
   color: var(--cream);
 }
 .bulk-list li::before {
-  content: "\2022";
+  content: "â€”";
   color: #eab98f;
 }
 .bulk-visual {
@@ -3963,7 +3963,7 @@ button:focus-visible, a:focus-visible {
 }
 
 
-/* Lovebatch cart interactions Ã¢â‚¬â€ additive styles using the existing brand tokens. */
+/* Lovebatch cart interactions â€” additive styles using the existing brand tokens. */
 .lovebatch-cart-backdrop {
   position: fixed;
   inset: 0;
@@ -4133,7 +4133,7 @@ button:focus-visible, a:focus-visible {
 
 .announcement i::before,
 .marquee i::before {
-  content: "Ã¢Å“Â³";
+  content: "âœ³";
   display: block;
   font-family: Arial, sans-serif;
   font-size: 14px;
@@ -4161,116 +4161,188 @@ button:focus-visible, a:focus-visible {
 }
 
 
-/* Rolling announcement banner on mobile and tablet only */
+/* Mobile/tablet announcement: keep the burgundy background fixed and move only the text */
 @media (max-width: 1024px) {
   .announcement {
+    display: block !important;
+    width: 100% !important;
+    height: 30px !important;
+    overflow: hidden !important;
+    background: var(--ink) !important;
+    position: relative !important;
+  }
+
+  .announcement-track {
+    display: flex !important;
+    align-items: center !important;
     width: max-content !important;
-    min-width: 100%;
-    justify-content: flex-start !important;
-    gap: 36px !important;
-    white-space: nowrap !important;
-    animation: lovebatch-banner-scroll 18s linear infinite;
+    height: 100% !important;
+    animation: lovebatch-announcement-scroll 28s linear infinite !important;
     will-change: transform;
   }
 
-  @keyframes lovebatch-banner-scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
+  .announcement-group {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 24px !important;
+    padding-right: 24px !important;
+    height: 100% !important;
+    white-space: nowrap !important;
+  }
+
+  .announcement-group span {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+  }
+
+  .announcement-group i {
+    flex: 0 0 auto !important;
+  }
+
+  @keyframes lovebatch-announcement-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
   }
 }
 
 
-/* Fix empty spaces when filtering product categories */
-.product-grid > div:has(> .product-card[style*="display: none"]) {
-  display: none !important;
-}
-
-
-/* Correctly remove hidden product wrappers from the grid */
-.product-grid > div:has(> article.product-card[style*="display: none"]) {
-  display: none !important;
-}
-
-
-/* Lovebatch mobile product-grid alignment fix */
-@media (max-width: 800px) {
-  .product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    width: 100%;
-  }
-
-  .product-grid > div {
-    min-width: 0;
-    width: 100%;
-  }
-
-  .product-grid .product-card {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .product-grid .card-topline {
-    min-width: 0;
-    gap: 6px;
-    overflow-wrap: anywhere;
-  }
-
-  .product-grid .product-image,
-  .product-grid .christmas-coming-soon-image {
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-  }
-
-  .product-grid .product-info,
-  .product-grid .product-info > div {
-    min-width: 0;
-    overflow-wrap: anywhere;
-  }
-}
-
-@media (max-width: 480px) {
-  .product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 10px;
-  }
-
-  .product-grid .product-card {
-    padding: 9px;
-  }
-
-  .product-grid .christmas-coming-soon-image {
-    min-height: 0 !important;
-    aspect-ratio: 1.15;
-  }
-
-  .product-grid .christmas-coming-soon-image > div:last-child {
-    max-width: calc(100% - 24px);
-    padding: 12px 10px !important;
-    font-size: 11px !important;
-  }
-}
-
-/* Fix mobile product grid column overflow */
-@media (max-width: 800px) {
-  .product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .product-grid > div {
+/* Mobile and tablet: restore the original static announcement layout */
+@media (max-width: 1024px) {
+  .announcement {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    gap: 8px !important;
+    width: 100% !important;
     min-width: 0 !important;
-    width: 100%;
+    height: 30px !important;
+    padding: 0 10px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    animation: none !important;
+    transform: none !important;
+    background: var(--ink) !important;
   }
 
-  .product-grid .product-card {
-    min-width: 0 !important;
-    width: 100%;
-    max-width: 100%;
+  .announcement-track {
+    display: contents !important;
+    width: 100% !important;
+    animation: none !important;
+    transform: none !important;
   }
+
+  .announcement-group {
+    display: contents !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .announcement-group:first-child > :nth-child(n+6),
+  .announcement-group:nth-child(2) {
+    display: none !important;
+  }
+
+  .announcement > span,
+  .announcement-group:first-child > span,
+  .announcement-group:first-child > i {
+    display: inline-flex !important;
+    flex: 0 1 auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  .announcement > i,
+  .announcement-group:first-child > i {
+    flex: 0 0 auto !important;
+  }
+
+  .site-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    width: 100% !important;
+    padding-left: 5vw !important;
+    padding-right: 5vw !important;
+  }
+
+  .site-header .logo {
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  .site-header .header-actions {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex: 0 0 auto !important;
+    gap: 12px !important;
+    margin-left: auto !important;
+  }
+}
+
+/* Lovebatch fixes: visible bulk-order bullets and white footer logo */
+.bulk-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+  margin: 0 0 36px !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.bulk-list li {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 12px !important;
+}
+
+.bulk-list li::before {
+  content: "\2022" !important;
+  display: inline-block !important;
+  color: #eab98f !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+  flex: 0 0 auto !important;
+}
+
+.footer-top .logo-light img {
+  filter: brightness(0) invert(1) !important;
+}
+
+
+/* Hide the top announcement strip on mobile and tablet; keep it on laptop/desktop */
+@media (max-width: 1024px) {
+  .announcement {
+    display: none !important;
+  }
+}
+
+/* Lovebatch feedback tiles: brand palette */
+.instagram-grid .ig-tile-one {
+  background: #680600 !important;
+  color: #fff2df !important;
+}
+.instagram-grid .ig-tile-two {
+  background: #ffffff !important;
+  color: #680600 !important;
+}
+.instagram-grid .ig-tile-three {
+  background: #fff2df !important;
+  color: #680600 !important;
+}
+.instagram-grid .ig-tile::before {
+  border-color: rgba(104, 6, 0, 0.28) !important;
+}
+.instagram-grid .ig-tile-two .ig-cookie,
+.instagram-grid .ig-tile-three .ig-cookie {
+  border-color: rgba(104, 6, 0, 0.18) !important;
+}
+.instagram-grid .ig-follow {
+  border-color: #680600 !important;
+  color: #680600 !important;
 }
