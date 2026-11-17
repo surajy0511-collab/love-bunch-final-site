@@ -3022,7 +3022,7 @@ em {
   color: var(--cream);
 }
 .bulk-list li::before {
-  content: "Ã¢â‚¬â€";
+  content: "ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â";
   color: #eab98f;
 }
 .bulk-visual {
@@ -3963,7 +3963,7 @@ button:focus-visible, a:focus-visible {
 }
 
 
-/* Lovebatch cart interactions Ã¢â‚¬â€ additive styles using the existing brand tokens. */
+/* Lovebatch cart interactions ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â additive styles using the existing brand tokens. */
 .lovebatch-cart-backdrop {
   position: fixed;
   inset: 0;
@@ -4133,7 +4133,7 @@ button:focus-visible, a:focus-visible {
 
 .announcement i::before,
 .marquee i::before {
-  content: "Ã¢Å“Â³";
+  content: "ÃƒÂ¢Ã…â€œÃ‚Â³";
   display: block;
   font-family: Arial, sans-serif;
   font-size: 14px;
@@ -4345,4 +4345,66 @@ button:focus-visible, a:focus-visible {
 .instagram-grid .ig-follow {
   border-color: #680600 !important;
   color: #680600 !important;
+}
+
+
+/* Responsive product grid fix: keep every card inside its grid column */
+@media (max-width: 800px) {
+  .batches {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .batches .product-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .batches .product-grid > div {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .batches .product-grid .product-card {
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .batches .product-card .product-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .batches .product-card .product-image img {
+    max-width: 100% !important;
+  }
+
+  .batches .product-card .product-info,
+  .batches .product-card .product-info > div {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .batches .product-grid {
+    gap: 8px !important;
+  }
+
+  .batches .product-card {
+    padding: 8px !important;
+  }
+
+  .batches .product-info h3 {
+    font-size: 14px !important;
+  }
 }
