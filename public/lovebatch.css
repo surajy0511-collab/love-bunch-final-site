@@ -4408,3 +4408,18 @@ button:focus-visible, a:focus-visible {
     font-size: 14px !important;
   }
 }
+
+/* Hide hamburger menu on mobile and tablet */
+@media (max-width: 1024px) {
+  .menu-toggle,
+  .hamburger,
+  .hamburger-menu,
+  .nav-toggle {
+    display: none !important;
+  }
+}
+@media (max-width: 1024px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}
